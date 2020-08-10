@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>E-Crime Portal Global</title>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+<link href="/css/plugins.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
+<script src="/js/jquery.js"></script>
+<script type="text/javascript" src="/city_state.js"></script>
+</head>
+<body>
+    <% if(path != "/") { var hc = "" } else { var hc = "data-transparent=\"true\"" }%>
+<div class="body-inner">
+    <header id="header" <%- hc %> data-fullwidth="true" class="dark submenu-dark">
+        <div class="header-inner">
+        <div class="container">
+        <div id="logo">
+        <a href="/">
+
+        <span class="logo-dark"><img src="/ECrime (2).png" /></span>
+        <span class="logo-responsive"><img src="/3.png" /></span>
+        </a>
+        </div>
+        
+        
+        <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
+        <form class="search-form" action="https://inspirothemes.com/polo/search-results-page.html" method="get">
+        <input class="form-control" name="q" type="text" placeholder="Type &amp; Search...">
+        <span class="text-muted">Start typing &amp; press "Enter" or "ESC" to close</span>
+        </form>
+        </div>
+        
+        
+        <div class="header-extras">
+        <ul>
+        <li>
+        <a id="btn-search" href="#"> <i class="icon-search"></i></a>
+        </li>
+        <li>
+        <div class="p-dropdown">
+        <a href="javascript:void(0)"><i class="icon-globe"></i><span>EN</span></a>
+        <ul class="p-dropdown-content">
+        <li><a href="javascript:void(0)">English</a></li>
+        </ul>
+        </div>
+        </li>
+        </ul>
+        </div>
+        
+        
+        <div id="mainMenu-trigger">
+        <a class="lines-button x"><span class="lines"></span></a>
+        </div>
+        
+        
+        <div id="mainMenu" style="min-height: 0px;">
+        <div class="container">
+        <nav>
+        <ul>
+        <li><a href="/">Home</a></li>
+        </li>
+        <li class="dropdown"><span class="dropdown-arrow"></span><a href="javascript:void(0)">Resources</a>
+            <ul class="dropdown-menu">
+            <li><a href="/resources/faq">FAQ</a></li>
+            <li><a href="/resources/cybersafetyhandbook">Cyber Safety Handbook</a></li>
+            <li><a href="/resources/cyberawareness">Cyber Awareness</a></li>
+            <li><a href="/resources/cnspalertlevel">CNSP Alert Level</a></li>
+            <li><a href="/resources/cybersecuritytools">Cyber Security Tools</a></li>
+            <li><a href="/resources/ecpcstest">ECPCS Test</a></li>
+            </ul>
+            </li>
+        <li class="dropdown"><span class="dropdown-arrow"></span><a href="javascript:void(0)">Request</a>
+            <ul class="dropdown-menu">
+            <li><a href="/request/new">Request Support</a></li>
+            <li><a href="/request/urgent">Request Urgent Support</a></li>
+            <li><a href="/request/status">Check Request Status</a></li>
+            <li><a href="/request/modify">Modify Request</a></li>
+            <li><a href="/request/delete">Delete Request</a></li>
+            </ul>
+            </li>
+                <li class="dropdown"><span class="dropdown-arrow"></span><a href="javascript:void(0)">Communities</a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-submenu"><a href="javascript:void(0)">Asia</a>
+                    <ul class="dropdown-menu">
+                    <li><a href="/community/India">India</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="/community/report">Report a Community</a></li>
+            <li><a href="/community/new">Request New</a></li>
+            </ul>
+            </li>
+                <li><a href="/notifications">Notifications</a>
+                <li><a href="/contact">Contact Us</a>
+                    </li>
+        </ul>
+        </nav>
+        </div>
+        </div>
+        
+        </div>
+        </div>
+        </header>
+

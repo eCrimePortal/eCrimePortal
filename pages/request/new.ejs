@@ -1,0 +1,50 @@
+<%- include('../_partials/top') %>
+<section id="page-title" class="dark" style="background: url(https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-outline.png)">
+    <div class="shape-divider" data-style="10"></div>
+    <div class="container">
+    <div class="breadcrumb">
+        <% var rmv = path.slice(1); var arra = rmv.split('/');%>
+        <ul>
+        <li>Home</li>
+        <% arra.forEach(bcumb => { %>
+        <li><%= bcumb.charAt(0).toUpperCase() + bcumb.slice(1) %></li>
+        <% }) %>
+    </ul>
+    </div>
+    <div class="page-title">
+    <h1>New Request</h1>
+    <span>For questions or requests regarding eCrimePortal or Cyber Security.</span>
+    </div>
+    </div>
+    </section>
+    
+    
+    <section id="page-content">
+        <h4 class="text-center">All the information you shall provide below will be stored on a RSA-2048 encrypted server located in India.</h4>
+    <div class="container">
+    <div class="row">
+    <div class="content col-lg-12">
+    <form action="/request/new" method="post">
+    <div class="form-group">
+    <label for="lfn">Legal Full Name</label>
+    <input type="text" class="form-control" id="lfn" name="fullname" placeholder="Dan Patterson">
+    </div>
+    <div class="form-group">
+        <label for="email">E-Mail Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="dan@email.com">
+    </div>
+    <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="Request to host a webinar">
+    </div>
+    <div class="form-group">
+    <label for="message">Message</label>
+    <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+    </div>
+    <button class="btn btn-light" type="submit" id="submit">Submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </section>
+<%- include('../_partials/bottom') %>

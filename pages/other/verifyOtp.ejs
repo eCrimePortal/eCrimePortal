@@ -1,0 +1,65 @@
+<%- include('../_partials/top') %>
+<section class="m-t-80 p-b-150">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="text-left">
+    <h1 class="text-medium">Verify E-Mail</h1>
+	<span id="min">02</span><span id="sep">:</span><span id="sec">00</span>
+    <div class="seperator m-t-20 m-b-20"></div>
+    <div class="search-form">
+		<form class="form-inline" method="POST" action="/community/verify">
+			<div class="form-group m-t-20">
+			<label for="staticEmail2" class="sr-only">Email</label>
+			<input readonly="" name="email" class="form-control-plaintext" id="staticEmail2" value="<%= email %>" type="text">
+			</div>
+			<div class="form-group mx-sm-3 m-t-20">
+			<label for="inputPassword2" class="sr-only">OTP</label>
+			<input class="form-control" name="otp" id="inputPassword2" placeholder="One Time Password" type="password">
+			</div>
+			<button type="submit" class="btn m-t-20">Confirm E-Mail</button>
+			<button class="btn m-t-20" onclick="resend()">Resend</button>
+			</form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+<script type="text/javascript">
+var myVar = setInterval(()=>{
+	var x=parseInt(document.getElementById("min").innerHTML);
+	var y=parseInt(document.getElementById("sec").innerHTML);
+	if(x==0&&y==0)
+	{
+		stop();
+	}
+	else
+	{
+		if(x>0&&y==0)
+		{
+			x=x-1;
+			y=59;
+		}
+		else
+			y=y-1; 
+		document.getElementById("min").innerHTML=0+""+x;
+		if(y>=10)
+			document.getElementById("sec").innerHTML=y;
+		else
+			document.getElementById("sec").innerHTML=0+""+y;
+	}
+},1000);
+function stop()
+{
+	document.getElementById("min").innerHTML="OTP Expired";
+	document.getElementById("sep").innerHTML="";
+	document.getElementById("sec").innerHTML="";
+	clearInterval(myVar);
+}
+function resend()
+{
+	location.reload();
+}	
+</script>
+<%- include('../_partials/bottom') %>

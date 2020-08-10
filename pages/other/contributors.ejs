@@ -1,0 +1,29 @@
+<%- include('../_partials/top') %>
+
+<section id="page-content">
+    <div class="container">
+    <div class="heading-text heading-section text-center">
+    <h2>Contributors</h2>
+    <span>People who helped setting the pillars for the organization. Without them, eCrimePortal would still have been just an idea.</span>
+    </div>
+    <div class="row team-members m-b-40">
+        <% cbs.forEach( contributor => { %>
+    <div class="col-lg-3">
+    <div class="team-member">
+    <div class="team-image">
+    <img src="<%= contributor.photo %>">
+    </div>
+    <div class="team-desc">
+    <h3><%= contributor.name %></h3>
+    <span><%= contributor.work %></span>
+    <p><%= contributor.desc %></p>
+    </div>
+    </div>
+    </div>
+    <% }); %>
+    </div>
+    </div>
+<div class="seperator">
+    </div>
+
+<%- include('../_partials/bottom') %>

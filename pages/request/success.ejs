@@ -1,0 +1,37 @@
+<%- include('../_partials/top') %>
+<section>
+    <div class="container">
+        <div class="heading-text heading-line text-center">
+            <h4 class="text-success"><% if (path === "/request/new") { var t = "We have registered your request!" } else { var t = "Found the following: "}%><%= t %></h4>
+            </div>
+            <div class="mb-5"></div>
+            <div class="table-responsive">
+            <table class="table table-bordered nobottommargin">
+            <thead>
+            <tr>
+            <th>Legal Name</th>
+            <th>E-Mail</th>
+            <th>Unique ID</th>
+            <th>Staff Member</th>
+            <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><%= ret.name %></td>
+            <td><%= ret.email %></td>
+            <td><%= ret.uid %></td>
+            <td><%= ret.staff %></td>
+            <td><%= ret.status %></td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <div class="mb-5"></div>
+            <p><span class="text-bold">Subject</span>: <%= ret.subject %></p>
+            <div class="mb-2"></div>
+            <p><span class="text-bold">Message</span>: <%= ret.message %></p>
+            <button class="btn btn-dark" onclick="window.print()">Print</button>
+        </div>
+    </section>
+<%- include('../_partials/bottom') %>

@@ -1,0 +1,160 @@
+<%- include('./_partials/top') %>
+<section id="section-home" class="fullscreen background-colored">
+<div class="container">
+<div class="container-fullscreen text-center">
+    <div class="text-middle text-center text-light">
+        <h1 class="text-big" data-animate="fadeIn">E-Crime Portal Global</h1>
+        <h4 class="headerlead" data-animate="fadeIn">An initiative of the CNSP Foundation</h4>
+        <a data-animate="fadeIn" data-animate-delay="500" class="btn btn-light scroll-to" href="#section-about">Read More</a>
+        
+        </div>
+</div>
+</div>
+<div id="particles-dots" class="particles"></div>
+</section>
+
+
+<section id="section-about" class="p-b-40">
+<div class="container">
+    <div class="heading-text heading-section text-center">
+        <h2>ABOUT US</h2>
+        </div>
+<div class="row">
+<div class="col-lg-6" data-animate="fadeInUp" data-animate-delay="300">
+<p>The E-Crime Portal is a not for profit initiative of the Clear Net Security Foundation that
+    aims to educate the globe about Cyber Security.
+<br>
+<br>We envision to achieve our goal
+of educating millions by utilizing the potential of the Internet.</p>
+</div>
+<div class="col-lg-6" data-animate="fadeInUp" data-animate-delay="600">
+<p>We regularly make educational videos, write blogs, and release tools to help improve our
+    users' knowledge of Cyber Security.
+<br>
+<br>The E-Crime Portal is a pan-nation project. If you would like to create a chapter for your
+country, <a href="#">click here!</a></p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="seperator"></div>
+
+<section id="section-services">
+<div class="container">
+    <div class="heading-text heading-section text-center">
+        <h2>WHAT MAKES US SPECIAL?</h2> 
+        </div>
+<div class="seperator seperator-small"></div>
+<hr class="space">
+<div class="row">
+<div class="col-lg-4" data-animate="fadeInUp" data-animate-delay="0">
+<div class="icon-box clean small center">
+<div class="icon">
+<a href="#"><i class="fab fa-twitter"></i></a>
+</div>
+<h3>Socially Responsive</h3>
+<p>We always hear what our community has to say. Go ahead and tweet out to us and we will always make sure to reply.</p>
+</div>
+</div>
+<div class="col-lg-4" data-animate="fadeInUp" data-animate-delay="200">
+    <div class="icon-box clean small center">
+    <div class="icon">
+    <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+    <h3>Open Source</h3>
+    <p>We <i class="fas fa-heart"></i> open source! That's why all of the code we write is avaible on our GitHub organization.</p>
+    </div>
+    </div>
+    <div class="col-lg-4" data-animate="fadeInUp" data-animate-delay="400">
+    <div class="icon-box clean small center">
+    <div class="icon">
+    <a href="#"><i class="far fa-handshake"></i></a>
+    </div>
+    <h3>Not For Profit</h3>
+    <p>We are not here to have our pockets stashed with crisp bills. We are just doing what we love.</p>
+    </div>
+    </div>
+<div class="col-lg-4" data-animate="fadeInUp" data-animate-delay="600">
+<div class="icon-box clean small center">
+<div class="icon">
+<a href="#"><i class="fas fa-tachometer-alt"></i></a>
+</div>
+<h3>Speedy Response</h3>
+<p>We have a 12 hour response policy for normal support requests and a 30 minute response policy for urgent ones.</p>
+</div>
+</div>
+<div class="col-lg-4" data-animate="fadeInUp" data-animate-delay="800">
+<div class="icon-box clean small center">
+<div class="icon">
+<a href="#"><i class="fas fa-users"></i></a>
+</div>
+<h3>Friendly & Supportive</h3>
+<p>Instead of spitting out technical knowledge we try and understand your problem to provide a comprehensive solution.</p>
+</div>
+</div>
+<div class="col-lg-4" data-animate="fadeInUp" data-animate-delay="1000">
+<div class="icon-box clean small center">
+<div class="icon">
+<a href="#"><i class="fas fa-envelope-open-text"></i></a>
+</div>
+<h3>Monthly Newsletter</h3>
+<p>We send out a comprehensive newsletter containing all the crisp and important events regarding Cyber Security!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="section-blog">
+<div class="container">
+    <div class="heading-text heading-section text-center">
+        <h2>IN THE NEWS</h2> 
+        </div>
+<div class="seperator seperator-small"></div>
+<hr class="space">
+<div id="blog" class="grid-layout post-3-columns m-b-30" data-item="post-item">
+    <% recents.forEach(recent => { var au = recent.author.split(" ") %>
+        <div class="post-item border">
+            <div class="post-item-wrap">
+            <div class="post-image">
+            <a href="/blog/<%= recent.url %>">
+            <img alt="<%= recent.title %>" src="<%= recent.sil %>">
+            </a>
+            <span class="post-meta-category"><a href="/category/<%= recent.category %>"><%= recent.category.charAt(0).toUpperCase() + recent.category.slice(1) %></a></span>
+            </div> 
+            <div class="post-item-description">
+            <span class="post-meta-date"><i class="fa fa-calendar-o"></i><%= recent.date %></span>
+            <span class="post-meta-comments"><a href="/author/<%= recent.aurl %>"><i class="fa fa-comments-o"></i><%= au[0].charAt(0).toUpperCase() + au[0].slice(1) %> <%= au[1].charAt(0).toUpperCase() + au[1].slice(1) %></a></span>
+            <h2><a href="/blog/<%= recent.url %>"><%= recent.title %>
+            </a></h2>
+            <p><%- recent.description %></p>
+            <a href="/blog/<%= recent.url %>" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+            </div>
+            </div>
+    <% }) %>
+
+</div>
+</div>
+</section>
+<div id="modalSubscriptionForm" class="modal modal-auto-open" data-delay="30000" data-cookie-enabled="true" data-cookie-name="subshown" style="background: url('/Untitled design (7).png') no-repeat; background-size: cover; background-position: center top;  max-width: 700px; min-height:250px">
+    <div style="max-width:400px;" class="text-light p-t-30">
+    <h2 class="m-b-0">Subscribe to the monthly Newsletter!</h2>
+    <h5>We hate spam as much as you do!</h5>
+    <div class="widget widget-newsletter m-b-10">
+    <form class="widget-subscribe-form" novalidate action="s" role="form" method="post">
+    <div class="input-group">
+    <input aria-required="true" name="widget-subscribe-form-email" class="form-control required email m-b-10" placeholder="Enter your Email" type="email"><button type="submit" id="widget-subscribe-submit-button" class="btn btn-dark m-b-10">Subscribe</button>
+    </div>
+    </form>
+    </div>
+    <small><em><a href="#" class="modal-close">No thanks, I wish to remain uninformed!</a></em></small>
+    </div>
+    </div>
+<div id="modal-auto-open" class="modal modal-auto-open text-center cookie-notify mdark" data-delay="1" data-cookie-enabled="true" data-cookie-name="modalshown">
+    <h2 class="modal-title">BETA Version Disclaimer</h2>
+    <p>Hello, visitor!<br> We are delighted to have you visit our website! This is just to inform you that the website is still in its very early phases and you might find some crooks and nooks here and there. If you do, it is our humble request that you report them on the <a href="">GitHub repository</a> of this website.</p>
+    <a class="btn btn-dark modal-close" href="javascript:void(0)">Dismiss</a>
+    </div>
+<%- include('./_partials/bottom') %>

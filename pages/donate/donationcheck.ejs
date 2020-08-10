@@ -1,0 +1,17 @@
+<%- include('../_partials/top') %>
+    <section id="page-content">
+    <div class="container">
+    <div class="row">
+    <div class="content col-lg-12">
+    <form action="/donation/record" method="post">
+    <div class="form-group">
+    <label for="tid">E-Mail</label>
+    <input type="text" class="form-control" id="tid" name="email" placeholder="dan@theman.com">
+    </div>
+    <button class="btn btn-light" type="submit" id="submit">Submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </section>
+<%- include('../_partials/bottom') %>

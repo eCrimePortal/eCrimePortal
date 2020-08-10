@@ -1,0 +1,36 @@
+<%- include('../_partials/top') %>
+<section id="page-title" class="dark" style="background: url(https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-outline.png)">
+    <div class="shape-divider" data-style="10"></div>
+    <div class="container">
+    <div class="breadcrumb">
+        <% var rmv = path.slice(1); var arra = rmv.split('/');%>
+        <ul>
+        <li>Home</li>
+        <% arra.forEach(bcumb => { %>
+        <li><%= bcumb.charAt(0).toUpperCase() + bcumb.slice(1) %></li>
+        <% }) %>
+    </ul>
+    </div>
+    <div class="page-title">
+    <h1>Delete Request</h1>
+    </div>
+    </div>
+    </section>
+    
+    
+    <section id="page-content">
+    <div class="container">
+    <div class="row">
+    <div class="content col-lg-12">
+    <form action="/request/delete" method="post">
+    <div class="form-group">
+    <label for="uid">Unique ID</label>
+    <input type="text" class="form-control" id="uid" name="uid" placeholder="cxn3-33sfg">
+    </div>
+    <button class="btn btn-light" type="submit" id="submit">Submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </section>
+<%- include('../_partials/bottom') %>
