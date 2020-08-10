@@ -1,0 +1,42 @@
+
+<%- include('../_partials/top') %>
+<section>
+    <div class="container">
+        <div class="heading-text heading-line text-center">
+            <h4 class="text-success">Donation Status</h4>
+            </div>
+            <div class="mb-5"></div>
+            <div class="table-responsive">
+            <table class="table table-bordered nobottommargin">
+            <thead>
+            <tr>
+            <th>Donation ID</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Mode</th>
+            <th>Message</th>
+            <th>Country</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% times.forEach(post => { %>
+                    <tr>
+                        <td><%= post.orderid %></td>
+                      <td><%= post.amount %></td>
+                      <td><%= post.date %></td>
+                      <td><%= post.name %></td>
+                      <td><%= post.status %></td>
+                      <td><%= post.mode %></td>
+                      <td><%= post.message %></td>
+                      <td><%= post.country %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+            </table>
+            </div>
+            <button class="btn btn-dark" onclick="window.print()">Print</button>
+    </div>
+    </section>
+<%- include('../_partials/bottom') %>

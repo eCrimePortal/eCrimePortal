@@ -1,0 +1,46 @@
+<%- include('../_partials/top') %>
+<section id="page-content">
+    <div class="container">
+    
+    <div class="page-title">
+    <h1>Category : <%= cat.charAt(0).toUpperCase() + cat.slice(1) %></h1>
+    <div class="breadcrumb float-left">
+    <ul>
+        <% var rmv = path.slice(1); var arra = rmv.split('/');%>
+        <ul>
+        <li>Home</li>
+        <% arra.forEach(bcumb => { %>
+        <li><%= bcumb.charAt(0).toUpperCase() + bcumb.slice(1) %></li>
+        <% }) %>
+    </li>
+    </ul>
+    </div>
+    </div>
+    
+    
+    <div id="blog" class="post-thumbnails">
+    <% posts.forEach(post => { %>
+    <div class="post-item">
+    <div class="post-item-wrap">
+    <div class="post-image">
+    <a href="/blog/<%= post.title %>">
+    <img alt="<%= post.title %>" src="<%= post.sil %>">
+    </a>
+    <span class="post-meta-category"><a href="/category/<%= post.category %>"><%= post.category %></a></span>
+    </div>
+    <div class="post-item-description">
+    <span class="post-meta-date"><i class="fa fa-calendar-o"></i><%= post.date %></span>
+    <span class="post-meta-comments"><a href="/author/<%= post.aurl %>"><i class="fa fa-comments-o"></i><%= post.author %></a></span>
+    <h2><a href="/blog/<%= post.title %>"><%= post.title %>
+    </a></h2>
+    <p><%= post.description %></p>
+    <a href="/blog/<%= post.title %>" class="item-link">Read More <i class="icon-chevron-right"></i></a>
+    </div>
+    </div>
+    </div>
+    <% }) %>
+    </div>
+    </div>
+    </section> 
+    
+<%- include('../_partials/bottom') %>
