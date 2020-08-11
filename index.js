@@ -20,7 +20,7 @@ db.on('error', console.log.bind(console, "Could not connect to the database!"));
 db.once('open', function () {
     console.log("Connected to the database!");
 });
-app.app.use(express.static("assets"))
+app.use(express.static("assets"))
 app.set('views', __dirname + '/pages')
 app.set('view engine', 'ejs')
 app.use('/', gets)
