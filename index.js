@@ -15,7 +15,7 @@ mongoose.connect(
         useUnifiedTopology: true
     }
 );
-var db=mongoose.connection;
+var db = mongoose.connection;
 db.on('error', console.log.bind(console, "Could not connect to the database!"));
 db.once('open', function () {
     console.log("Connected to the database!");

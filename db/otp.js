@@ -6,7 +6,7 @@ var otpSchema = Schema({
 	code: {type: String},
 }, {timestamps: true});
 
-otpSchema.index({createdAt: 1},{expireAfterSeconds: 120});
+otpSchema.indexes({createdAt: 1}, {expireAfterSeconds: 120});
 
 var otp=mongoose.model("otps",otpSchema);
 module.exports=otp;
