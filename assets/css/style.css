@@ -14420,3 +14420,6 @@ body[data-bg-image]{
 #modalSubscriptionForm {
     color:black;
 }
+.spacer {
+    padding-bottom: 5rem
+}
