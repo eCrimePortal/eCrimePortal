@@ -5,6 +5,7 @@ var blogs = require('./routes/blogs');
 var community = require('./routes/community');
 var other = require('./routes/other');
 var request = require('./routes/request');
+var resources = require('./routes/resources');
 var donate = require('./routes/donate');
 const express = require("express");
 const app = express();
@@ -29,6 +30,7 @@ app.use('/blog', blogs)
 app.use('/', donate)
 app.use('/', other)
 app.use('/request', request)
+app.use('/resources', resources)
 // app.use('/', posts)
 
 app.use(function(req, res) {

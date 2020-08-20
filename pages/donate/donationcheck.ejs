@@ -1,17 +1,58 @@
 <%- include('../_partials/top') %>
-    <section id="page-content">
-    <div class="container">
+<section
+  id="page-title"
+  class="light"
+  style="
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-outline.png);
+  "
+>
+<div class="shape-divider" data-style="10"></div>
+  <div class="container">
+    <div class="page-title">
+      <h1>Check Status</h1>
+      <span>Check the status of all your past donations made to the eCrimePortal.</span>
+    </div>
+  </div>
+</section>
+
+<section id="page-content">
+  <div class="container">
     <div class="row">
-    <div class="content col-lg-12">
-    <form action="/donation/record" method="post">
-    <div class="form-group">
-    <label for="tid">E-Mail</label>
-    <input type="text" class="form-control" id="tid" name="email" placeholder="dan@theman.com">
+      <div class="content col-lg-6">
+        <form action="/donation/record" method="post">
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="akshit@example.com"
+            />
+          </div>
+          <button class="btn btn-dark" type="submit" id="submit">
+            Check using Email
+          </button>
+        </form>
+      </div>
+      <div class="content col-lg-6">
+        <form action="/donation/record" method="post">
+          <div class="form-group">
+            <label for="did">Donation ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="did"
+              name="did"
+              placeholder="ux2IW37"
+            />
+          </div>
+          <button class="btn btn-dark" type="submit" id="submit">
+            Check using DID
+          </button>
+        </form>
+      </div>
     </div>
-    <button class="btn btn-light" type="submit" id="submit">Submit</button>
-    </form>
-    </div>
-    </div>
-    </div>
-    </section>
+  </div>
+</section>
 <%- include('../_partials/bottom') %>

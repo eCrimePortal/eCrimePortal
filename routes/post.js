@@ -2,8 +2,6 @@ require("dotenv").config();
 const express = require("express");
 var bodyParser = require("body-parser");
 var router = express.Router();
-var MarkdownIt = require('markdown-it'),
-    md = new MarkdownIt();
 const fetchBlogs = require("../models/blog");
 const authorinfo = require("../models/author");
 router.use(bodyParser.json());
