@@ -1,122 +1,284 @@
-<%- include('../_partials/top') %> 
-    
-    
-    <section id="page-content">
-        <div class="container">
-        <div class="row">
-        <div class="content col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                <span class="h4">Donate to the eCrimePortal (of the CNSP Foundation)</span>
-                <p class="text-muted">Your donation helps us pay for basic utilities to keep the portal up and running for years!</p>
-                </div>
-                <div class="card-body">
-                <form action="/oncedonate" method="POST">
-                <div class="tabs">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tabProfile" role="tab" aria-controls="home" aria-selected="true">Donor Information</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tabBilling" role="tab" aria-controls="contact" aria-selected="false">Billing Information</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" id="confirm-tab" data-toggle="tab" href="#tabConfirm" role="tab" aria-controls="confirm" aria-selected="false">Amount</a>
-                </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="tabProfile" role="tabpanel" aria-labelledby="tab-profile">
+<%- include('../_partials/top') %>
+<section
+  id="page-title"
+  class="light"
+  style="
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-outline.png);
+  "
+>
+<div class="shape-divider" data-style="10"></div>
+  <div class="container">
+    <div class="page-title">
+      <h1>Donate</h1>
+      <span>Donate to the eCrimePortal to help it run for the coming years.</span>
+    </div>
+  </div>
+</section>
+<section id="page-content">
+  <div class="container">
+    <div class="row">
+      <div class="content col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <form
+              id="wizard7"
+              class="wizard needs-validation"
+              data-style="1"
+              action="/donate"
+              method="POST"
+              novalidate
+            >
+              <h3>Personal Information</h3>
+              <div class="wizard-content">
+                <div class="h2 mb-4">Personal Information</div>
+                <div class="h5 mb-4">All fields are required.</div>
                 <div class="form-row">
-                <div class="form-group col-md-6">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" placeholder="Enter your Name" required>
-                </div>
-                <div class="form-group col-md-6">
-                <label for="surname">Surname</label>
-                <input type="text" class="form-control" name="surname" placeholder="Enter your Surname" required>
-                </div>
-                </div>
-                <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">E-Mail</label>
-                    <input class="form-control" type="email" name="email" placeholder="Enter your E-Mail Address" required>
-                    </div>
-                </div>
-                </div>
-                <div class="tab-pane fade" id="tabBilling" role="tabpanel" aria-labelledby="tab-billing">
-                <div class="form-row">
-                <div class="form-group col-md-6">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" name="address" placeholder="Enter your Apartment, studio, or floor" required>
-                </div>
-                <div class="form-group col-md-6">
-                <label for="address2">Address 2</label>
-                <input type="text" class="form-control" name="address2" placeholder="Enter your Street Address" required>
-                </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="country">Region</label>
-                        <select onchange="set_country(this,country,city_state)" size="1" name="region" required>
-                            <option value="" selected="selected">SELECT REGION</option>
-                            <option value=""></option>
-                            <script type="text/javascript">
-                            setRegions(this);
-                            </script>
-                            </select>
-                            
-                            
-                        </div>
-                <div class="form-group col-md-6">
-                <label for="state">Country</label>
-                <select name="country" size="1" disabled="disabled" onchange="set_city_state(this,city_state)" required></select>
-                </div>
+                  <div class="form-group col-md-6">
+                    <label for="username">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="email">Surname</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="surname"
+                      placeholder="Enter your surname"
+                      required
+                    />
+                  </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="country">State</label>
-                        <select name="city_state" size="1" disabled="disabled" onchange="print_city_state(country,this)" required></select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="city">City</label>
-                            <input type="text" class="form-control" name="city" placeholder="Enter your City" required>
-                            </div>
+                  <div class="form-group col-md-6">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" name="gender">
+                      <option value="-1">Select your gender</option>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                      <option value="rns">Rather not say</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="gender">Date of Birth</label>
+                    <input
+                      class="form-control"
+                      type="date"
+                      name="dateofbirth"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <h3>Mailing Address</h3>
+              <div class="wizard-content">
+                <div class="h2 mb-4">Billing Information</div>
+                <div class="h5 mb-4">Mailing Address</div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="address">Address Line 1</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="address"
+                      placeholder="Enter your Apartment or Floor"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="address2">Address Line 2</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="address2"
+                      placeholder="Enter your Street or Locality"
+                    />
+                  </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
-                    <label>Zip Code:</label>
-                    <input type="text" class="form-control" name="zip" placeholder="Enter Zip Code" required>
-                    </div>
-                    </div>
+                  <div class="form-group col-md-6">
+                    <label for="city">City</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="city"
+                      placeholder="Enter your City"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" name="state" placeholder="Enter your state" />
+                  </div>
                 </div>
-                <div class="tab-pane fade" id="tabConfirm" role="tabpanel" aria-labelledby="tab-confirm">
-                <div class="row">
-                <div class="col-md-6">
+                <div data-toggle-group="location">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="country">Country</label>
+                    <select class="form-control" name="country" data-toggle="country" data-country="" required></select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Zip Code</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="zip"
+                      placeholder="Enter Zip Code"
+                    />
+                  </div>
+                </div>
+            </div>
+              </div>
+
+              <h3>Confirmation</h3>
+              <div class="wizard-content">
+                <div class="h5 mb-4">Confimration</div>
+                <p>Make sure to enter your correct Email address as you will receive an Email from us once you complete the transaction.</p>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="country">Email</label>
+                    <input class="form-control" name="email" type="email" placeholder="Enter your Email" required />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Amount (INR)</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="amount"
+                      placeholder="Enter amount"
+                    />
+                  </div>
+                </div>
+                <div class="form-group mb-1 mt-5">
+                </div>
                 <div class="form-group">
-                <label class="form-control-label">Amount</label>
-                <input class="form-control" name="amount" type="tel" required>
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      name="terms_conditions"
+                      id="terms_conditions"
+                      class="custom-control-input"
+                    />
+                    <label class="custom-control-label" for="terms_conditions"
+                      >By checking this option, you agree to accept the
+                      <a href="#">Terms of Service</a> and <a href="#">Refund Policy</a>.</label
+                    >
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      name="gift"
+                      id="gift"
+                      class="custom-control-input"
+                    />
+                    <label class="custom-control-label" for="gift"
+                      >By checking this option, you accept that this transcation is a gift.</label
+                    >
+                  </div>
                 </div>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-md-6">
-                <div class="form-group">
-                <label class="form-control-label">Message</label>
-                <input class="form-control" name="message" type="text">
-                </div>
-                </div>
-                </div>
-                </div>
-                <div class="mt-4">
-                    <button type="submit" class="btn btn-sm">Donate</button>
-                    </div>
-                </div>
-                </div>
-                </form>
-                </div>
-                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        </div>
-        </div>
-        </section>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript" src="/city_state.js"></script>
+<script type="text/javascript">
+  document.addEventListener("load", loadCountries());
+</script>
+<script src="plugins/validate/validate.min.js"></script>
+<script src="plugins/jquery-steps/jquery.steps.min.js"></script>
+<script>
+  var wizard7 = $("#wizard7");
+  wizard7.steps({
+    headerTag: "h3",
+    bodyTag: ".wizard-content",
+    autoFocus: true,
+    enableAllSteps: true,
+    titleTemplate:
+      '<span class="number">#index#</span><span class="title">#title#</span>',
+    onStepChanging: function (event, currentIndex, newIndex) {
+      // Allways allow previous action even if the current form is not valid!
+      if (currentIndex > newIndex) {
+        return true;
+      }
+      return wizard7.valid();
+    },
+    onStepChanged: function (event, currentIndex, priorIndex) {},
+    onFinishing: function (event, currentIndex) {
+      return wizard7.valid();
+    },
+    onFinished: function (event, currentIndex) {
+      var form = $('body').find('form');
+      form.submit();
+      INSPIRO.elements.notification(
+        "Submited",
+        "Thank you, your account has been registed successfully",
+        "success"
+      );
+    },
+  });
+  //Validation
+  wizard7.validate({
+    errorClass: "is-invalid",
+    validClass: "is-valid",
+    errorElement: "div",
+    rules: {
+      name: {
+        required: true,
+      },
+      email: {
+        required: true,
+        email: true,
+        minlength: 8
+      },
+      surname: {
+        required: true,
+        minlength: 3
+      },
+      gender: {
+        required: true
+      },
+      dateofbirth: {
+        required: true
+      },
+      amount: {
+        required: true
+      },
+      address: {
+        required: true
+      },
+      address2: {
+        required: true
+      },
+      city: {
+        required: true
+      },
+      state: {
+        required: true
+      },
+      country: {
+        required: true,
+      },
+      zip: {
+        required: true,
+      },
+      gift: {
+        required: true,
+      },
+      terms_conditions: {
+        required: true,
+      },
+    },
+    errorPlacement: function (error, element) {
+      $(element).parents(".form-group").append(error);
+    },
+  });
+  $(".wizard").find(".actions ul > li > a").addClass("btn");
+</script>
 <%- include('../_partials/bottom') %>
